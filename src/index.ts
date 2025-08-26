@@ -13,9 +13,12 @@ export default {
           "User-Agent": "Cloudflare-Worker",
         },
         body: JSON.stringify({
-          name: "QR Scan",                 // custom event name
-          url: "https://qr.kacosmetology.pl", // URL where the scan happens
-          domain: "kacosmetology.pl",         // domain registered in Plausible
+          name: "QR Scan",
+          url: "https://qr.kacosmetology.pl",
+          domain: "kacosmetology.pl",
+          props: {
+            source: "Witryna QR"
+          }
         }),
       });
     } catch (err) {
